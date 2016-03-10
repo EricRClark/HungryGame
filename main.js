@@ -6,14 +6,16 @@ function  Player(options) {
   this.chewRate/*power*/ = options.chewRate || 2;
   this.barfs = 0;
   this.eat = function (rival) {
-    rival.energy -= 400;
+    rival.energy -= 200;
     var random = Math.floor(Math.random() *10);
     var utensil = allUtils[Math.floor(Math.random()*4)];
+    var eatery = allEateries[Math.floor(Math.random()*4)];
+
   if (random > 4) {
     if(rival.energy < 1) {
       console.log("Good God! There's nothing left of " + rival.name + " to eat!");
     }
-    
+
     if(rival.utensil) {
       this.energy = this.energy - (rival.chewRate * rival.utensil.firepower);
       console.log("Oh the humanity of it all!!! To be eaten alive with a " + rival.utensil.name);
@@ -24,8 +26,8 @@ function  Player(options) {
     }
 
     } else {
-      rival.barfs = this.energy - 2;
-      console.log("Ewww! Tried to bite, instead out came some barf! That'll sap some some energy and layers of tooth enamel" /*,rival.energy*/);
+      rival.barfs = rival.energy - "200";
+      console.log("Ewww! Tried to bite, instead out came some barf! That'll sap some some energy and layers of tooth enamel", "Energy level is down to " + this.energy);
     }
 
   };
@@ -76,6 +78,7 @@ var party = new Eatery ({
   setAmbience: 1
 });
 
+var allEateries = ["Oak", "Ryan's Family Steak House", "Outback", "Hall's Chop House"];
 
 /*   Players   */
 var Ricky = new Player({energy: 900, name: "Ricky"});
