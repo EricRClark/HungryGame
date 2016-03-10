@@ -18,7 +18,8 @@ function  Player(options) {
 
     if(rival.utensil) {
       this.energy = this.energy - (rival.chewRate * rival.utensil.firepower);
-      console.log("Oh the humanity of it all!!! To be eaten alive with a " + rival.utensil.name);
+      console.log("Oh the humanity of it all!!! To be eaten alive with a " + rival.this.utensil.name);
+
     } else {
       this.energy = this.energy - rival.chewRate;
       console.log("Donner Party of 2, Donner Party of 2... Gruesomely big bite there!");
@@ -26,17 +27,18 @@ function  Player(options) {
     }
 
     } else {
-      rival.barfs = rival.energy - "200";
+      this.barfs = rival.energy - "200";
       console.log("Ewww! Tried to bite, instead out came some barf! That'll sap some some energy and layers of tooth enamel", "Energy level is down to " + this.energy);
     }
 
   };
 
   this.ability = function (name, firepower) {
-   this.utensil = new Utensil({name: name, firepower: firepower});
+   this.utensil = new utensil({name: name, firepower: firepower});
   }
 
 };
+
 /*   2nd Constructer  */
 function Eatery (options) {
   var options = options || {};
@@ -52,7 +54,7 @@ function Eatery (options) {
 }
 
 /*   3rd Constructer   */
-function Utensil(options) {
+function utensil(options) {
   var options = options || {};
   this.name = options.name || "with a Spork";
   this.firepower = options.firepower || 2;
@@ -86,9 +88,9 @@ var Kobayashi = new Player({energy: 1000, name: "Kobayashi"});
 
 
 /*   Utensils   */
-var shovel = new Utensil({firepower:100, name: "with a Shovel"});
-var spork = new Utensil({firepower:20, name: "with a Spork"});
-var fork = new Utensil({firepower:40, name: "with a Fork"});
-var mellonBaller = new Utensil({firepower:50, name: "with a The Mellon-Baller of Doom"});
+var shovel = new utensil({firepower:100, name: "Shovel"});
+var spork = new utensil({firepower:20, name: "Spork"});
+var fork = new utensil({firepower:40, name: "Fork"});
+var mellonBaller = new utensil({firepower:50, name: "The Mellon-Baller of Doom"});
 
 var allUtils = [shovel, spork, fork, mellonBaller];
