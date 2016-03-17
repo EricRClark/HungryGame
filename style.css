@@ -1,3 +1,37 @@
-* {
-  font-family:'Rock Salt', cursive;
-}
+.jumbotron {
+  background-image: url('http://az795576.vo.msecnd.net/bh-uploads/2015/09/anth0-735x525.jpg');
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  text-align: -webkit-center;
+  font-size: -webkit-xxx-large;
+  font-family: fantasy;
+  color: gold;}
+  h3:hover {
+    color: red;
+ }
+
+ p {
+   font-size: smaller;
+ }
+
+ /*.shovel {
+   background-image: url("https://cdn1.iconfinder.com/data/icons/tools-glyph/32/garden-trowel-512.png");
+   background-size: 100%;
+   background-repeat: no-repeat; }
+
+ .spork {
+   background-image: url("http://cdn2.hubspot.net/hub/31499/file-13717830-jpg/images/spork-resized-600.jpg");
+   background-size: 100%;
+   background-repeat: no-repeat; }
+
+ .fork {
+   background-image: url("https://image.freepik.com/free-icon/fork-in-diagonal_318-61187.png");
+   background-size: 100%;
+   background-repeat: no-repeat; }
+
+ .mellonballer {
+   background-image: url("http://www.prestigesmartchef.com/Assets/images/equipment/1_55_MellonBaller.jpg");
+   background-size: 120%;
+   background-repeat: no-repeat; }
